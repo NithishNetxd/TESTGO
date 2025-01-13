@@ -1,0 +1,16 @@
+version: 0.0
+os: linux
+
+files:
+  - source: /stfc
+    destination: /home/ec2-user/stfc/
+  - source: /config.toml
+    destination: /home/ec2-user/stfc/
+
+hooks:
+  BeforeInstall:
+    - location: scripts/BeforeInstall.sh
+      timeout: 300
+  AfterInstall:
+    - location: scripts/AfterInstall.sh
+      timeout: 300
