@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      golang: 1.x
+    commands:
+      - go mod download
+
+  build:
+    commands:
+      - go build -o stfc main.go
+
+  post_build:
+    commands:
+      - echo "Build completed successfully."
+      - echo "Ready for deployment or further steps."
+
+artifacts:
+  files:
+    - stfc
+    - config.toml
+  discard-paths: yes
