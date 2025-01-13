@@ -5,22 +5,23 @@ phases:
     runtime-versions:
       golang: 1.x
     commands:
+      - echo "Installing dependencies..."
       - go mod download
 
   build:
     commands:
+      - echo "Building the application..."
       - go build -o stfc main.go
 
   post_build:
     commands:
       - echo "Build completed successfully."
-      - echo "Ready for deployment or further steps."
-      - cp appspec.yml .
-      - mkdir -p scripts             
-      - cp -r scripts/* scripts/  
+      - echo "Preparing files for deployment..."
 
 artifacts:
   files:
     - stfc
     - config.toml
-  discard-paths: yes
+    - appspec.yml
+    - scripts/** 
+  discard-paths: no
