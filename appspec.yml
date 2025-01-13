@@ -2,15 +2,18 @@ version: 0.0
 os: linux
 
 files:
-  - source: /stfc
+  - source: stfc
     destination: /opt/stfc/
-  - source: /config.toml
+  - source: config.toml
     destination: /opt/stfc/
 
 hooks:
   BeforeInstall:
     - location: scripts/BeforeInstall.sh
       timeout: 300
+      runas: root
+
   AfterInstall:
     - location: scripts/AfterInstall.sh
       timeout: 300
+      runas: root
