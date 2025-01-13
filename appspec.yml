@@ -3,9 +3,9 @@ os: linux
 
 files:
   - source: /stfc
-    destination: /home/ec2-user/stfc/
+    destination: /opt/stfc/
   - source: /config.toml
-    destination: /home/ec2-user/stfc/
+    destination: /opt/stfc/
 
 hooks:
   BeforeInstall:
