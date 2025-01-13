@@ -2,4 +2,4 @@
 
 cd /opt/stfc/
 sudo pkill stfc
-mv stfc BKP/stfc_$(date +%F)
+sudo mv stfc BKP/stfc_$(date +%F)
