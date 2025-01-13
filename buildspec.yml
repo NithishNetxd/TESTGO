@@ -15,6 +15,9 @@ phases:
     commands:
       - echo "Build completed successfully."
       - echo "Ready for deployment or further steps."
+      - cp appspec.yml .
+      - mkdir -p scripts             
+      - cp -r scripts/* scripts/  
 
 artifacts:
   files:
