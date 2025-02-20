@@ -30,7 +30,7 @@ sudo chmod +x /opt/code/codepipeline
 sudo chown -R $USERNAME:$USERNAME /opt/code/codepipeline
 
 echo "Starting service..."
-sudo systemctl restart codepipeline || sudo systemctl start codepipeline
+sudo systemctl restart codepipe || sudo systemctl start codepipe
 
 echo "Service started successfully."
 exit 0
