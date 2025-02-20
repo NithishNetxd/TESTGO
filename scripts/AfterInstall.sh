@@ -1,7 +1,7 @@
 #!/bin/bash
 
-cd /opt/stfc/
+cd /opt/code/
 
-sudo chmod +x stfc
+sudo chmod +x codepipeline
 
-sudo nohup ./stfc &
+sudo service codepipe start
