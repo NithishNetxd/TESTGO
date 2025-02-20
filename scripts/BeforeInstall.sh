@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd /opt/stfc/
-sudo pkill stfc
-sudo mv stfc BKP/stfc_$(date +%F)
+cd /opt/code/
+sudo service codepipe stop
+sudo mv codepipeline BKP/codepipeline_$(date +%F)
