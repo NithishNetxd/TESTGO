@@ -16,11 +16,6 @@ hooks:
       timeout: 300
       runas: root
 
-  ApplicationStart:
-    - location: scripts/StartService.sh
-      timeout: 300
-      runas: root
-
   ValidateService:
     - location: scripts/HealthCheck.sh
       timeout: 300
