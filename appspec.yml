@@ -2,10 +2,9 @@ version: 0.0
 os: linux
 
 files:
-  - source: stfc
-    destination: /opt/stfc/
-  - source: config.toml
-    destination: /opt/stfc/
+  - source: codepipeline
+    destination: /opt/code/
+
 
 hooks:
   BeforeInstall:
