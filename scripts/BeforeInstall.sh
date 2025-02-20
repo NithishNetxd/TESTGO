@@ -3,7 +3,7 @@ set -e
 
 cd /opt/code/
 echo "Stopping existing service..."
-sudo systemctl stop codepipeline || sudo service codepipeline stop
+sudo systemctl stop codepipe || sudo service codepipe stop
 
 echo "Backing up old binary..."
 sudo mv codepipeline BKP/codepipeline_$(date +%F)
