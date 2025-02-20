@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Health check settings
-URL="http://localhost:8080"  # Change to your actual health check endpoint
+URL="http://localhost:8080/health"  # Use the correct health check endpoint
 RETRIES=6  # Total retries (30 seconds total, checking every 5 seconds)
 SUCCESS=0
 
@@ -13,16 +13,12 @@ for ((i=1; i<=RETRIES; i++)); do
 
   if [[ "$HTTP_STATUS" == "200" ]]; then
     SUCCESS=1
-    break
+    echo "Health check passed."
+    exit 0
   fi
 
   sleep 5  # Wait 5 seconds before retrying
 done
 
-if [[ $SUCCESS -eq 1 ]]; then
-  echo "Health check passed. Proceeding..."
-  exit 0
-else
-  echo "Health check failed! Stopping deployment."
-  exit 1
-fi
+echo "🚨 Health check failed! Stopping deployment."
+exit 1
