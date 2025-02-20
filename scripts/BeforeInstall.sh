@@ -1,5 +1,12 @@
 #!/bin/bash
+set -e
 
 cd /opt/code/
-sudo service codepipe stop
+echo "Stopping existing service..."
+sudo systemctl stop codepipeline || sudo service codepipeline stop
+
+echo "Backing up old binary..."
 sudo mv codepipeline BKP/codepipeline_$(date +%F)
+
+echo "Service stopped and backup created."
+exit 0
