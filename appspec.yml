@@ -16,3 +16,8 @@ hooks:
     - location: scripts/AfterInstall.sh
       timeout: 300
       runas: root
+      
+  ApplicationStart:
+    - location: scripts/HealthCheck.sh
+      timeout: 300
+      runas: root
