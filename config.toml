@@ -1,4 +1,9 @@
 # config.toml
 
 port = "9999"
+log_level = "INFO"
+
+# Timeout settings (in seconds)
+read_timeout = 10
+write_timeout = 10
 
