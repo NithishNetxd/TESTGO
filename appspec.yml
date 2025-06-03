@@ -2,7 +2,10 @@ version: 0.0
 os: linux
 
 files:
-  - source: codepipeline
+  - source: gobuild
+    destination: /opt/Build/
+files:
+  - source: config.toml
     destination: /opt/Build/
 
 hooks:
