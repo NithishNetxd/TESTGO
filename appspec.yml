@@ -4,7 +4,6 @@ os: linux
 files:
   - source: gobuild
     destination: /opt/Build/
-files:
   - source: config.toml
     destination: /opt/Build/
 
