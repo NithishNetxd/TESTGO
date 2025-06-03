@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Health check settings
-URL="http://localhost:8080/health"  # Use the correct health check endpoint
+URL="http://localhost:9999/health"  # Use the correct health check endpoint
 RETRIES=6  # Total retries (30 seconds total, checking every 5 seconds)
 REQUIRED_SUCCESSES=5  # Must get 200 at least 5 times in a row
 SUCCESS_COUNT=0
