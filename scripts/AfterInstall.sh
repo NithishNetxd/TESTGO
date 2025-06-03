@@ -18,19 +18,19 @@ echo "Using user: $USERNAME"
 
 
 echo "Moving application files..."
-if [[ -f "/opt/Build/codepipeline" ]]; then
-    sudo mv /opt/Build/codepipeline /opt/code/
+if [[ -f "/opt/Build/gobuild" ]]; then
+    sudo mv /opt/Build/gobuild /opt/test/
 else
-    echo "Error: /opt/Build/codepipeline not found!" >&2
+    echo "Error: /opt/Build/gobuild not found!" >&2
     exit 1
 fi
 
 echo "Setting permissions..."
-sudo chmod +x /opt/code/codepipeline
-sudo chown -R $USERNAME:$USERNAME /opt/code/codepipeline
+sudo chmod +x /opt/test/gobuild
+sudo chown -R $USERNAME:$USERNAME /opt/test/gobuild
 
 echo "Starting service..."
-sudo systemctl restart codepipe || sudo systemctl start codepipe
+sudo systemctl restart test || sudo systemctl start test
 
 echo "Service started successfully."
 exit 0
